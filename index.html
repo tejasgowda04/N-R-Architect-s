@@ -124,6 +124,16 @@
             top: 0;
             z-index: 1000;
         }
+        /* ===== HEADER SIZE FIX ===== */
+header {
+    height: 90px;              /* bigger header */
+}
+
+.header-container {
+    height: 90px;
+    padding: 0 20px;           /* vertical padding removed, height controlled */
+}
+
         
         .header-container {
             display: flex;
@@ -138,17 +148,14 @@
             text-decoration: none;
         }
        .logo-img {
-    height: 60px;          /* Bigger */
+    height: 60px;              /* BIGGER logo */
     width: 60px;
-    object-fit: contain;
+    border-radius: 50%;        /* ROUND */
+    object-fit: cover;
+    background: #fff;
+    padding: 5px;              /* nice white padding */
 }
 
-.logo-round {
-    border-radius: 50%;
-    background: #fff;
-    padding: 6px;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.15);
-}
 
         
         .logo-text {
@@ -199,6 +206,21 @@
         width: 55px;
     }
 }
+        @media (max-width: 768px) {
+    header {
+        height: 100px;
+    }
+
+    .header-container {
+        height: 100px;
+    }
+
+    .logo-img {
+        height: 65px;
+        width: 65px;
+    }
+}
+
 
         
         /* Hero Section */
@@ -1663,6 +1685,7 @@ window.addEventListener("load",reveal);
     </script>
 </body>
 </html>
+
 
 
 
