@@ -816,6 +816,41 @@
             opacity: 1;
             transform: translateY(0);
         }
+
+        :root {
+    --charcoal:#0F0F0F;
+    --white:#fff;
+    --gold:#C9A24D;
+    --light-grey:#F4F4F4;
+    --dark-grey:#333;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Inter',sans-serif}
+.section-padding{padding:80px 0}
+.container{max-width:1200px;margin:auto;padding:0 20px}
+.section-title{text-align:center;margin-bottom:60px}
+.section-title h2{font-size:2.5rem}
+.project-filters{display:flex;justify-content:center;gap:10px;margin-bottom:40px}
+.filter-btn{padding:8px 20px;border-radius:30px;border:1px solid #333;cursor:pointer}
+.filter-btn.active{background:var(--gold)}
+.projects-grid{
+display:grid;
+grid-template-columns:repeat(auto-fill,minmax(350px,1fr));
+gap:30px
+}
+.project-card{border-radius:6px;overflow:hidden;box-shadow:0 5px 15px rgba(0,0,0,.1)}
+.project-img{height:250px;background-size:cover;background-position:center}
+
+.testimonials{background:#f4f4f4}
+.testimonials-grid{
+display:grid;
+grid-template-columns:repeat(auto-fill,minmax(350px,1fr));
+gap:30px
+}
+.testimonial-card{background:#fff;padding:20px;border-radius:6px}
+video{border-radius:6px;width:100%}
+.fade-in{opacity:0;transform:translateY(20px);transition:.6s}
+.fade-in.visible{opacity:1;transform:none}
     </style>
 </head>
 <body>
@@ -974,73 +1009,69 @@
         </div>
     </section>
 
-    <!-- Projects Section -->
-    <section class="section-padding" id="projects">
-        <div class="container">
-            <div class="section-title">
-                <h2>Our Projects</h2>
-                <p>A showcase of our completed and ongoing construction projects</p>
-            </div>
-            
-            <div class="project-filters">
-                <button class="filter-btn active" data-filter="all">All Projects</button>
-                <button class="filter-btn" data-filter="completed">Completed Homes</button>
-                <button class="filter-btn" data-filter="ongoing">Ongoing Projects</button>
-                <button class="filter-btn" data-filter="interiors">Interiors</button>
-                <button class="filter-btn" data-filter="commercial">Commercial Works</button>
-            </div>
-            
-            <div class="projects-grid">
-                <div class="project-card fade-in" data-category="completed">
-                    <div class="project-img" style="background-image: url('https://images.unsplash.com/photo-1613977257363-707ba9348227?ixlib=rb-4.0.3&auto=format&fit=crop&w=1470&q=80');"></div>
-                    <div class="project-info">
-                        <h3>Modern Villa, Davangere</h3>
-                        <div class="project-meta">
-                            <span><i class="fas fa-map-marker-alt"></i> Davangere</span>
-                            <span><i class="fas fa-home"></i> Residential</span>
-                            <span class="project-status status-completed">Completed</span>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="project-card fade-in" data-category="ongoing">
-                    <div class="project-img" style="background-image: url('https://images.unsplash.com/photo-1513584684374-8bab748fbf90?ixlib=rb-4.0.3&auto=format&fit=crop&w=1468&q=80');"></div>
-                    <div class="project-info">
-                        <h3>Duplex House, Shivamogga</h3>
-                        <div class="project-meta">
-                            <span><i class="fas fa-map-marker-alt"></i> Shivamogga</span>
-                            <span><i class="fas fa-home"></i> Residential</span>
-                            <span class="project-status status-ongoing">Ongoing</span>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="project-card fade-in" data-category="interiors">
-                    <div class="project-img" style="background-image: url('https://images.unsplash.com/photo-1616594039964-ae9021a400a0?ixlib=rb-4.0.3&auto=format&fit=crop&w=1470&q=80');"></div>
-                    <div class="project-info">
-                        <h3>Luxury Apartment Interior, Bengaluru</h3>
-                        <div class="project-meta">
-                            <span><i class="fas fa-map-marker-alt"></i> Bengaluru</span>
-                            <span><i class="fas fa-couch"></i> Interior</span>
-                            <span class="project-status status-completed">Completed</span>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="project-card fade-in" data-category="commercial">
-                    <div class="project-img" style="background-image: url('https://images.unsplash.com/photo-1497366754035-f200968a6e72?ixlib=rb-4.0.3&auto=format&fit=crop&w=1469&q=80');"></div>
-                    <div class="project-info">
-                        <h3>Office Complex, Chitradurga</h3>
-                        <div class="project-meta">
-                            <span><i class="fas fa-map-marker-alt"></i> Chitradurga</span>
-                            <span><i class="fas fa-building"></i> Commercial</span>
-                            <span class="project-status status-completed">Completed</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+   <section class="section-padding" id="projects">
+<div class="container">
+
+<div class="section-title">
+<h2>Our Projects</h2>
+</div>
+
+<div class="project-filters">
+<button class="filter-btn active" data-filter="all">All</button>
+<button class="filter-btn" data-filter="interiors">Interior</button>
+<button class="filter-btn" data-filter="commercial">Commercial</button>
+</div>
+
+<div class="projects-grid">
+
+<!-- Interior -->
+<div class="project-card fade-in" data-category="interiors"><div class="project-img" style="background-image:url('int1.jpg')"></div></div>
+<div class="project-card fade-in" data-category="interiors"><div class="project-img" style="background-image:url('int2.jpg')"></div></div>
+<div class="project-card fade-in" data-category="interiors"><div class="project-img" style="background-image:url('int3.jpg')"></div></div>
+<div class="project-card fade-in" data-category="interiors"><div class="project-img" style="background-image:url('int4.jpg')"></div></div>
+<div class="project-card fade-in" data-category="interiors"><div class="project-img" style="background-image:url('int5.jpg')"></div></div>
+<div class="project-card fade-in" data-category="interiors"><div class="project-img" style="background-image:url('int6.jpg')"></div></div>
+
+<!-- Commercial -->
+<div class="project-card fade-in" data-category="commercial"><div class="project-img" style="background-image:url('pro1.jpg')"></div></div>
+<div class="project-card fade-in" data-category="commercial"><div class="project-img" style="background-image:url('pro2.jpg')"></div></div>
+<div class="project-card fade-in" data-category="commercial"><div class="project-img" style="background-image:url('pro3.jpg')"></div></div>
+<div class="project-card fade-in" data-category="commercial"><div class="project-img" style="background-image:url('pro4.jpg')"></div></div>
+<div class="project-card fade-in" data-category="commercial"><div class="project-img" style="background-image:url('pro5.jpg')"></div></div>
+<div class="project-card fade-in" data-category="commercial"><div class="project-img" style="background-image:url('pro6.jpg')"></div></div>
+<div class="project-card fade-in" data-category="commercial"><div class="project-img" style="background-image:url('pro7.jpg')"></div></div>
+<div class="project-card fade-in" data-category="commercial"><div class="project-img" style="background-image:url('pro8.jpg')"></div></div>
+<div class="project-card fade-in" data-category="commercial"><div class="project-img" style="background-image:url('pro9.jpg')"></div></div>
+
+</div>
+</div>
+</section>
+
+<!-- ================= TESTIMONIAL VIDEOS ================= -->
+<section class="section-padding testimonials">
+<div class="container">
+
+<div class="section-title">
+<h2>Client Testimonials</h2>
+</div>
+
+<div class="testimonials-grid">
+
+<div class="testimonial-card fade-in">
+<video controls>
+<source src="testi1.mp4" type="video/mp4">
+</video>
+</div>
+
+<div class="testimonial-card fade-in">
+<video controls>
+<source src="testi2.mp4" type="video/mp4">
+</video>
+</div>
+
+</div>
+</div>
+</section>
 
     <!-- Process Section -->
     <section class="section-padding process" id="process">
@@ -1498,6 +1529,31 @@
                 });
             }
         });
+
+        const filterBtns=document.querySelectorAll(".filter-btn");
+const cards=document.querySelectorAll(".project-card");
+
+filterBtns.forEach(btn=>{
+btn.onclick=()=>{
+filterBtns.forEach(b=>b.classList.remove("active"));
+btn.classList.add("active");
+const f=btn.dataset.filter;
+cards.forEach(c=>{
+c.style.display=(f==="all"||c.dataset.category===f)?"block":"none";
+});
+};
+});
+
+/* FADE IN */
+const fade=document.querySelectorAll(".fade-in");
+const reveal=()=>fade.forEach(el=>{
+if(el.getBoundingClientRect().top<window.innerHeight-100){
+el.classList.add("visible");
+}
+});
+window.addEventListener("scroll",reveal);
+window.addEventListener("load",reveal);
+
     </script>
 </body>
 </html>
