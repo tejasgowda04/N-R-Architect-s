@@ -137,12 +137,19 @@
             align-items: center;
             text-decoration: none;
         }
-        
-        .logo-img {
-            height: 80px;
-            width: auto;
-            margin-right: 20px;
-        }
+       .logo-img {
+    height: 60px;          /* Bigger */
+    width: 60px;
+    object-fit: contain;
+}
+
+.logo-round {
+    border-radius: 50%;
+    background: #fff;
+    padding: 6px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+}
+
         
         .logo-text {
             font-family: 'Montserrat', sans-serif;
@@ -186,6 +193,13 @@
             cursor: pointer;
             color: var(--charcoal);
         }
+        @media (max-width: 768px) {
+    .logo-img {
+        height: 55px;
+        width: 55px;
+    }
+}
+
         
         /* Hero Section */
         .hero {
@@ -882,7 +896,8 @@ video{border-radius:6px;width:100%}
         <div class="container header-container">
             <a href="#" class="logo-container">
                 <!-- Logo Image -->
-                <img src="ARlogo.jpg" alt="NR Architects & Constructions Logo" class="logo-img">
+                <img src="ARlogo.jpg" alt="NR Architects Logo" class="logo-img logo-round">
+
             </a>
             
             <div class="mobile-toggle" id="mobileToggle">
@@ -1648,6 +1663,7 @@ window.addEventListener("load",reveal);
     </script>
 </body>
 </html>
+
 
 
 
