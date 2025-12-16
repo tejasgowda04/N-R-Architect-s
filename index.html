@@ -115,109 +115,133 @@
             color: var(--charcoal);
         }
         
-        /* Header Styles */
-        header {
-            background-color: var(--white);
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-            position: fixed;
-            width: 100%;
-            top: 0;
-            z-index: 1000;
-        }
-        /* ===== HEADER SIZE FIX ===== */
+      /* ================= HEADER FIX ================= */
+
 header {
-    height: 90px;              /* bigger header */
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background: #fff;
+  height: 110px;
+  z-index: 1000;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.08);
 }
 
 .header-container {
-    height: 90px;
-             /* vertical padding removed, height controlled */
+  height: 110px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 
-        
-        .header-container {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 15px 20px;
-        }
-        
-        .logo-container {
-            display: flex;
-            align-items: center;
-            text-decoration: none;
-        }
-       .logo-img {
-    height: 60px;              /* BIGGER logo */
-    width: 60px;      /* ROUND */
-    object-fit: cover;
+/* LOGO */
+.logo-container {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  text-decoration: none;
+}
+
+.logo-img {
+  width: 60px;
+  height: auto;
+}
+
+.logo-text {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #0F0F0F;
+  line-height: 1.2;
+}
+
+.logo-text span {
+  display: block;
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: #C9A24D;
+  margin-top: 4px;
+}
+
+/* NAV (DESKTOP FIX) */
+.nav-menu {
+  display: flex;
+  align-items: center;
+  list-style: none;
+  gap: 26px;
+}
+
+.nav-menu li {
+  margin: 0;
+}
+
+.nav-menu a {
+  text-decoration: none;
+  color: #0F0F0F;
+  font-weight: 500;
+  font-size: 1rem;
+}
+
+.nav-menu .btn {
+  padding: 10px 22px;
+  font-size: 0.95rem;
+}
+
+/* HAMBURGER */
+.mobile-toggle {
+  display: none;
+  font-size: 1.8rem;
+  cursor: pointer;
+}
+
+/* ================= MOBILE FIX ================= */
+@media (max-width: 768px) {
+
+  header {
+    height: 100px;
+  }
+
+  .header-container {
+    height: 100px;
+  }
+
+  .logo-container {
+    align-items: center;
+  }
+
+  .logo-img {
+    width: 52px;
+  }
+
+  .logo-text {
+    font-size: 1.05rem;
+  }
+
+  .logo-text span {
+    font-size: 0.75rem;
+  }
+
+  .mobile-toggle {
+    display: block;
+  }
+
+  .nav-menu {
+    position: fixed;
+    top: 100px;
+    left: -100%;
+    width: 100%;
+    height: calc(100vh - 100px);
     background: #fff;
-               /* nice white padding */
-}
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    padding-top: 40px;
+    transition: 0.3s ease;
+  }
 
-
-        
-        .logo-text {
-            font-family: 'Montserrat', sans-serif;
-            font-weight: 700;
-            font-size: 1.3rem;
-            color: var(--charcoal);
-        }
-        
-        .logo-text span {
-            color: var(--gold);
-            display: block;
-            font-size: 0.9rem;
-            font-weight: 500;
-            margin-top: 3px;
-        }
-        
-        .nav-menu {
-            display: flex;
-            list-style: none;
-        }
-        
-        .nav-menu li {
-            margin-left: 30px;
-        }
-        
-        .nav-menu a {
-            text-decoration: none;
-            color: var(--charcoal);
-            font-weight: 500;
-            font-size: 1rem;
-            transition: color 0.3s ease;
-        }
-        
-        .nav-menu a:hover {
-            color: var(--gold);
-        }
-        
-        .mobile-toggle {
-            display: none;
-            font-size: 1.5rem;
-            cursor: pointer;
-            color: var(--charcoal);
-        }
-        @media (max-width: 768px) {
-    .logo-img {
-        height: 55px;
-        width: 55px;
-    }
-}
-        @media (max-width: 768px) {
-    header {
-        height: 100px;
-    }
-
-    .header-container {
-        height: 100px;
-    }
-
-    .logo-img {
-        height: 65px;
-        width: 65px;
-    }
+  .nav-menu.active {
+    left: 0;
+  }
 }
 
 
@@ -912,30 +936,34 @@ video{border-radius:6px;width:100%}
         <i class="fab fa-whatsapp"></i>
     </a>
 
-    <!-- Header with Logo -->
     <header>
-        <div class="container header-container">
-            <a href="#" class="logo-container">
-                <!-- Logo Image -->
-                <img src="logo.png" alt="NR Architects Logo" class="logo-img logo-round">
+  <div class="container header-container">
+    <a href="#" class="logo-container">
+  <img src="logo.png" alt="NR Logo" class="logo-img">
 
-            </a>
-            
-            <div class="mobile-toggle" id="mobileToggle">
-                <i class="fas fa-bars"></i>
-            </div>
-            
-            <ul class="nav-menu" id="navMenu">
-                <li><a href="#home">Home</a></li>
-                <li><a href="#about">About Us</a></li>
-                <li><a href="#services">Services</a></li>
-                <li><a href="#projects">Projects</a></li>
-                <li><a href="#process">Process</a></li>
-                <li><a href="#contact">Contact</a></li>
-                <li><a href="tel:+919876543210" class="btn">📞 Call Now</a></li>
-            </ul>
-        </div>
-    </header>
+  <div class="logo-text">
+    NR Architects & Constructions
+    <span>Commitment to Excellence</span>
+  </div>
+</a>
+
+
+    <div class="mobile-toggle" id="mobileToggle">
+      <i class="fas fa-bars"></i>
+    </div>
+
+    <ul class="nav-menu" id="navMenu">
+      <li><a href="#home">Home</a></li>
+      <li><a href="#about">About Us</a></li>
+      <li><a href="#services">Services</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#process">Process</a></li>
+      <li><a href="#contact">Contact</a></li>
+      <li><a href="tel:+919876543210" class="btn">📞 Call Now</a></li>
+    </ul>
+  </div>
+</header>
+
 
     <!-- Hero Section -->
     <section class="hero" id="home">
