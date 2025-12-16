@@ -345,6 +345,31 @@ header {
             font-size: 1.8rem;
             margin-bottom: 10px;
         }
+
+        /* ===== ABOUT TEXT ALIGNMENT FIX ===== */
+
+.about-text {
+  max-width: 650px;
+  margin: auto;
+}
+
+.about-line {
+  font-size: 1.05rem;
+  line-height: 1.8;
+  color: #333;
+  margin-bottom: 14px;
+  text-align: left;
+}
+
+/* Mobile polish */
+@media (max-width: 768px) {
+  .about-line {
+    font-size: 1rem;
+    line-height: 1.7;
+    text-align: left;
+  }
+}
+
         
         /* Services Section */
         .services {
@@ -1005,12 +1030,37 @@ video{border-radius:6px;width:100%}
                 <p>NR Architects & Constructions is a professional team specializing in architecture, planning, interior design, and complete construction services.</p>
             </div>
             
-            <div class="about-content">
-                <div class="about-text fade-in">
-                    <p>We focus on transparent pricing, quality workmanship, and hassle-free execution. Every project is customized based on the client's needs, budget, and lifestyle.</p>
-                    <p>With a strong presence across Davangere, Shivamogga, Bengaluru, and Chitradurga, we bring excellence in construction to both residential and commercial projects.</p>
-                    <p>Our commitment to excellence ensures that every home we build is not just a structure, but a legacy that lasts for generations.</p>
-                </div>
+            <div class="about-text fade-in">
+  <p class="about-line">
+    We build with <strong>trust, transparency, and precision</strong>.
+  </p>
+
+  <p class="about-line">
+    We focus on clear pricing, quality workmanship, and hassle-free execution.
+  </p>
+
+  <p class="about-line">
+    Every project is customized to suit the client’s needs, budget, and lifestyle.
+  </p>
+
+  <p class="about-line">
+    Our team blends smart design with strong engineering for lasting results.
+  </p>
+
+  <p class="about-line">
+    We deliver both residential and commercial projects with equal care and commitment.
+  </p>
+
+  <p class="about-line">
+    With a strong presence in <strong>Davanagere, Shivamogga, Bengaluru, and Chitradurga</strong>,
+    we bring reliable construction solutions across the region.
+  </p>
+
+  <p class="about-line">
+    For us, every structure is more than a building — it’s a <strong>lasting legacy</strong>.
+  </p>
+</div>
+
                 
                 <div class="about-highlights">
                     <div class="highlight-card fade-in">
@@ -1712,6 +1762,7 @@ window.addEventListener("load",reveal);
     </script>
 </body>
 </html>
+
 
 
 
